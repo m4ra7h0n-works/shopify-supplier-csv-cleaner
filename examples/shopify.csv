@@ -1,0 +1,3 @@
+Handle,Title,Option1 Name,Option1 Value,Variant SKU,Variant Price,Variant Barcode,Status
+sample-notebook-00042,Sample notebook,Title,Default Title,00042,12.50,0001234567890,draft
+sample-pen-00043,Sample pen,Title,Default Title,00043,2.00,0001234567891,draft
