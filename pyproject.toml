@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shopify-supplier-csv-cleaner"
+version = "0.1.0"
+description = "Map supplier CSV columns to Shopify draft products while preserving SKU and barcode leading zeros."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "Zijian Xiao"}]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[tool.setuptools.packages.find]
+include = ["shopify_supplier_csv_cleaner*"]
