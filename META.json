@@ -1,0 +1,13 @@
+{
+  "description": "Prepare supplier CSV files for Shopify CSV import as new draft products.",
+  "topics": [
+    "python",
+    "shopify-csv-import",
+    "supplier-csv",
+    "csv-cleaner",
+    "sku",
+    "ecommerce",
+    "cli",
+    "data-cleaning"
+  ]
+}
