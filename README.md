@@ -2,6 +2,35 @@
 
 Map supplier CSV columns to new Shopify draft products while preserving existing SKU and barcode leading zeros.
 
+## Example
+
+Fictional supplier input; SKU and barcode leading zeros are preserved in the draft-product output.
+
+Input ([full file](examples/example-input.csv)):
+
+```csv
+Product,Item code,Unit price,EAN
+Sample notebook,00042,12.50,0001234567890
+Sample pen,00043,2.00,0001234567891
+```
+
+Run from the repository after installation (choose a new output path):
+
+```sh
+python -m shopify_supplier_csv_cleaner examples/example-input.csv shopify.csv \
+  --title Product --sku "Item code" --price "Unit price" --barcode EAN
+```
+
+Actual CLI output ([full generated file](examples/example-output.csv)):
+
+```csv
+Handle,Title,Option1 Name,Option1 Value,Variant SKU,Variant Price,Variant Barcode,Status
+sample-notebook-00042,Sample notebook,Title,Default Title,00042,12.50,0001234567890,draft
+sample-pen-00043,Sample pen,Title,Default Title,00043,2.00,0001234567891,draft
+```
+
+Need XLSX, balance checks or previews? Use the online version: <https://rowmoss.pivlu.com/?utm_source=github&utm_medium=readme&utm_campaign=shopify-supplier-csv-cleaner&utm_content=p111205>
+
 ## Install
 
 Python 3.10 or newer. From this repository:
@@ -64,7 +93,7 @@ sample-pen-00043,Sample pen,Title,Default Title,00043,2.00,0001234567891,draft
 
 ## Online version
 
-[Rowmoss online](https://rowmoss.pivlu.com/?utm_source=github&utm_medium=readme&utm_campaign=shopify-supplier-csv-cleaner) is a separate online version by the same author, Zijian Xiao. The online version needs no local installation and includes a preview to check mappings, prices, identifiers and issues before delivery. Its store comparison uses an uploaded Shopify product export, not a live store connection. It also supports supplier row tags; it does not support inventory, variants or existing-product updates.
+[Rowmoss online](https://rowmoss.pivlu.com/?utm_source=github&utm_medium=readme&utm_campaign=shopify-supplier-csv-cleaner&utm_content=p111205) is a separate online version by the same author, Zijian Xiao. The online version needs no local installation and includes a preview to check mappings, prices, identifiers and issues before delivery. Its store comparison uses an uploaded Shopify product export, not a live store connection. It also supports supplier row tags; it does not support inventory, variants or existing-product updates.
 
 Current online free allowance (available now; product information dated November 10, 2026):
 
